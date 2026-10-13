@@ -1,0 +1,9 @@
+# Godot
+.godot/
+*.translation
+export_presets.cfg
+/build/
+
+# Local overrides / test output
+/lucidin_chaos.local.json
+/test_output/

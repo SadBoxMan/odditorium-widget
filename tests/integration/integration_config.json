@@ -1,0 +1,7 @@
+{
+  "_help": "Config used by tools/run_integration.sh (fast reconnects, everything on).",
+  "streamerbot": {"reconnect_initial_s": 0.25, "reconnect_max_s": 1.0, "handshake_timeout_s": 5.0},
+  "chat": {"ignore_users": ["nightbot"]},
+  "redeems": {"enabled": true},
+  "debug": {"log_events": false, "show_regions": true}
+}

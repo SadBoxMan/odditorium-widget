@@ -1,0 +1,65 @@
+{
+  "_help": "lucidin-chaos config. Every key is optional; anything missing uses the built-in default. Keys starting with _ are comments. See README.md#config-reference.",
+
+  "streamerbot": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "endpoint": "/",
+    "password": "",
+    "reconnect_initial_s": 1.0,
+    "reconnect_max_s": 30.0,
+    "handshake_timeout_s": 10.0,
+    "max_message_bytes": 65536
+  },
+
+  "window": {
+    "width": 1920,
+    "height": 1080,
+    "x": -1,
+    "y": -1,
+    "borderless": true,
+    "transparent": true,
+    "always_on_top": false,
+    "click_through": true,
+    "background_color": "#00000000",
+    "max_fps": 60
+  },
+
+  "chat": {
+    "command_prefix": "!",
+    "ignore_users": ["streamelements", "nightbot", "streamlabs", "moobot"],
+    "max_message_length": 300,
+    "max_name_length": 25
+  },
+
+  "cooldowns": {
+    "per_user_global_s": 2.0,
+    "default_command_s": 10.0,
+    "follow_global_s": 2.0,
+    "raid_global_s": 30.0
+  },
+
+  "queue": {
+    "capacity": 50,
+    "max_pending_per_user": 2,
+    "dispatch_per_second": 4.0
+  },
+
+  "redeems": {
+    "_help": "Optional channel point redeems (Affiliate+). Off by default. Map each reward TITLE (as written on Twitch) to a chat command.",
+    "enabled": false,
+    "bypass_user_cooldowns": true,
+    "rewards": {
+      "Bonk the Streamer": { "command": "bonk", "args_from_input": true }
+    }
+  },
+
+  "modules": {
+  },
+
+  "debug": {
+    "show_regions": false,
+    "log_events": false,
+    "show_status": true
+  }
+}

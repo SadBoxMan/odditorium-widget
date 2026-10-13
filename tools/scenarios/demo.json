@@ -1,0 +1,11 @@
+{
+  "name": "demo",
+  "_help": "Friendly demo traffic for watching the overlay locally. Run with --loop to repeat.",
+  "steps": [
+    {"await_subscribed": true, "timeout": 120},
+    {"chat": {"user": "alice", "text": "!hi", "display": "Alice"}, "wait": 1.0},
+    {"chat": {"user": "bob", "text": "!hello", "display": "Bob"}, "wait": 1.0},
+    {"follow": {"user": "newfriend"}, "wait": 1.5},
+    {"raid": {"from": "coolstreamer", "viewers": 42}, "wait": 4.0}
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "_help": "Same as integration_config.json but with WebSocket authentication.",
+  "streamerbot": {"password": "mock-password", "reconnect_initial_s": 0.25, "reconnect_max_s": 1.0},
+  "redeems": {"enabled": true}
+}
