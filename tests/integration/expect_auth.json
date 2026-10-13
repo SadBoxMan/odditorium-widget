@@ -1,7 +1,27 @@
 {
-  "client_state": {"eq": "READY"},
-  "client.connects": {"min": 2},
-  "client.auth_failures": {"eq": 0},
-  "client.events": {"min": 5},
-  "bus.failed": {"eq": 0}
+  "client_state": {
+    "eq": "READY"
+  },
+  "client.connects": {
+    "min": 2
+  },
+  "client.auth_failures": {
+    "eq": 0
+  },
+  "client.events": {
+    "min": 5
+  },
+  "bus.failed": {
+    "eq": 0
+  },
+  "modules": {
+    "contains": [
+      "greeter",
+      "critter_race",
+      "bonk"
+    ]
+  },
+  "router.queued": {
+    "min": 4
+  }
 }

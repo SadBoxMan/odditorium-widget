@@ -15,7 +15,7 @@ var _anim_time := 0.0
 
 func get_default_config() -> Dictionary:
 	return {
-		"region": [100, 740, 1720, 320],
+		"region": [60, 760, 1340, 300],
 		"lanes": 6,
 		"min_humans_to_start": 3,
 		"lobby_timeout_s": 30.0,

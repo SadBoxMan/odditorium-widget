@@ -27,7 +27,8 @@ var rng := RandomNumberGenerator.new()
 
 # --- override -----------------------------------------------------------------
 
-## Defaults for this module's config section. "enabled" is added automatically.
+## Defaults for this module's config section. "enabled" (true) and "z_index"
+## (0; higher draws on top of other modules) are added automatically.
 func get_default_config() -> Dictionary:
 	return {}
 

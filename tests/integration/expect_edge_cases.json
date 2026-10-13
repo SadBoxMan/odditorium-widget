@@ -37,7 +37,11 @@
     "eq": 0
   },
   "modules": {
-    "contains": "critter_race"
+    "contains": [
+      "greeter",
+      "critter_race",
+      "bonk"
+    ]
   },
   "rejected_modules": {
     "eq": {}

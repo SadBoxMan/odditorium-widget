@@ -8,6 +8,7 @@ cd "$(dirname "$0")/.."
 GODOT="${GODOT:-godot}"
 OUT=test_output/integration
 mkdir -p "$OUT"
+touch test_output/.gdignore  # keep Godot from importing logs/screenshots
 "$GODOT" --headless --path . --import >/dev/null 2>&1 || true
 
 failures=0

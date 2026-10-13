@@ -85,12 +85,15 @@ func load_module(module: ChaosModule, parent: Node, cfg: ChaosConfig, assets: As
 	var defaults: Dictionary = module.get_default_config().duplicate(true)
 	if not defaults.has("enabled"):
 		defaults["enabled"] = true
+	if not defaults.has("z_index"):
+		defaults["z_index"] = 0
 	module.config = cfg.apply_module_defaults(id, defaults, module.get_config_open_paths(), module.get_config_constraints())
 	if not module.config["enabled"]:
 		rejected[id] = "disabled in config"
 		print("[modules] %s: disabled in config" % id)
 		module.free()
 		return false
+	module.z_index = clampi(module.config["z_index"], -100, 100)
 	module.app_config = cfg
 	module.assets = assets
 	module.overlay_size = overlay_size

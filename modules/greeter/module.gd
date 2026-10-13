@@ -60,8 +60,10 @@ func on_event(event: Dictionary) -> bool:
 
 
 func _pop(spec: Variant, text: String) -> void:
-	if get_child_count() >= config["max_on_screen"]:
-		get_child(0).queue_free()
+	while get_child_count() >= config["max_on_screen"]:
+		var oldest := get_child(0)
+		remove_child(oldest)
+		oldest.queue_free()
 	var region := rect_from(config["region"], Rect2(Vector2.ZERO, overlay_size))
 	var pop: Node2D = POP_SCRIPT.new()
 	pop.position = Vector2(rng.randf_range(region.position.x, region.end.x), rng.randf_range(region.position.y, region.end.y))

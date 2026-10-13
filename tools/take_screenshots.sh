@@ -8,6 +8,7 @@ GODOT="${GODOT:-godot}"
 OUT="$PWD/test_output/shots"
 SCENARIO="${SCENARIO:-res://tools/scenarios/demo.json}"
 mkdir -p "$OUT"
+touch test_output/.gdignore  # keep Godot from importing logs/screenshots
 PORT=$((20000 + RANDOM % 20000))
 "$GODOT" --headless --path . --script res://tools/mock_streamerbot.gd -- --scenario="$SCENARIO" --port="$PORT" >"$OUT/mock.log" 2>&1 &
 MOCK=$!

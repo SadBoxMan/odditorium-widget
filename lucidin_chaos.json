@@ -55,9 +55,27 @@
   },
 
   "modules": {
+    "greeter": {
+      "enabled": true,
+      "region": [60, 160, 1800, 300],
+      "duration_s": 3.0,
+      "cooldown_s": 30.0,
+      "show_follows": true,
+      "show_raids": true,
+      "max_on_screen": 12,
+      "shapes": [
+        {"shape": "circle", "color": "#ffd166", "size": 36, "sprite": ""},
+        {"shape": "square", "color": "#06d6a0", "size": 32, "sprite": ""},
+        {"shape": "triangle", "color": "#118ab2", "size": 40, "sprite": ""}
+      ],
+      "follow_shape": {"shape": "circle", "color": "#ef476f", "size": 44, "sprite": ""},
+      "raid_shape": {"shape": "triangle", "color": "#f78c6b", "size": 90, "sprite": ""},
+      "seed": 0,
+      "z_index": 0
+    },
     "critter_race": {
       "enabled": true,
-      "region": [100, 740, 1720, 320],
+      "region": [60, 760, 1340, 300],
       "lanes": 6,
       "min_humans_to_start": 3,
       "lobby_timeout_s": 30.0,
@@ -89,23 +107,39 @@
         {"shape": "triangle", "color": "#6c757d", "size": 28, "sprite": ""}
       ],
       "raider_critter": {"shape": "triangle", "color": "#ff5d8f", "size": 56, "sprite": ""},
-      "seed": 0
+      "seed": 0,
+      "z_index": 0
     },
-    "greeter": {
+    "bonk": {
+      "_help": "Object types live in 'objects'. Set sprite/sound to a file path (relative to this file) to replace the placeholder shape / add a hit sound.",
       "enabled": true,
-      "region": [60, 160, 1800, 300],
-      "duration_s": 3.0,
-      "cooldown_s": 30.0,
-      "show_follows": true,
-      "show_raids": true,
-      "max_on_screen": 12,
-      "shapes": [
-        {"shape": "circle", "color": "#ffd166", "size": 36, "sprite": ""},
-        {"shape": "square", "color": "#06d6a0", "size": 32, "sprite": ""},
-        {"shape": "triangle", "color": "#118ab2", "size": 40, "sprite": ""}
-      ],
-      "follow_shape": {"shape": "circle", "color": "#ef476f", "size": 44, "sprite": ""},
-      "raid_shape": {"shape": "triangle", "color": "#f78c6b", "size": 90, "sprite": ""},
+      "target_region": [1460, 640, 400, 380],
+      "bonk_cooldown_s": 20.0,
+      "allow_object_choice": true,
+      "streamer_name": "the streamer",
+      "throw_speed": 1300.0,
+      "spin": 10.0,
+      "gravity_scale": 1.0,
+      "lifetime_s": 4.0,
+      "fade_s": 0.6,
+      "max_objects": 15,
+      "show_labels": true,
+      "hit_text": "BONK!",
+      "volume_db": -6.0,
+      "default_sound": "",
+      "follow_bonk": false,
+      "follow_object": "pillow",
+      "raid_barrage": true,
+      "raid_barrage_max": 10,
+      "screen_floor": true,
+      "screen_walls": false,
+      "z_index": 10,
+      "objects": {
+        "ball": {"shape": "circle", "color": "#ff595e", "size": 48, "sprite": "", "sound": "", "mass": 1.0, "bounce": 0.7, "weight": 3},
+        "brick": {"shape": "square", "color": "#c97c5d", "size": 44, "sprite": "", "sound": "", "mass": 2.5, "bounce": 0.25, "weight": 2},
+        "wedge": {"shape": "triangle", "color": "#ffca3a", "size": 52, "sprite": "", "sound": "", "mass": 1.5, "bounce": 0.45, "weight": 2},
+        "pillow": {"shape": "square", "color": "#f4f1de", "size": 70, "sprite": "", "sound": "", "mass": 0.5, "bounce": 0.1, "weight": 1}
+      },
       "seed": 0
     }
   },

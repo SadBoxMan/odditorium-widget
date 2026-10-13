@@ -9,8 +9,13 @@
     {"chat": {"user": "bob", "text": "!join", "display": "Bob"}, "wait": 1.0},
     {"chat": {"user": "carol", "text": "!join", "display": "Carol"}, "wait": 1.0},
     {"chat": {"user": "dave", "text": "!hello", "display": "Dave"}, "wait": 1.0},
-    {"follow": {"user": "newfriend"}, "wait": 22.0},
-    {"log": "raid race"},
+    {"follow": {"user": "newfriend"}, "wait": 2.0},
+    {"log": "bonks"},
+    {"chat": {"user": "erin", "text": "!bonk @alice", "display": "Erin"}, "wait": 0.6},
+    {"chat": {"user": "frank", "text": "!bonk brick", "display": "Frank"}, "wait": 0.6},
+    {"chat": {"user": "gwen", "text": "!yeet @bob pillow", "display": "Gwen"}, "wait": 0.6},
+    {"redeem": {"user": "hana", "title": "Bonk the Streamer", "input": "wedge", "display": "Hana"}, "wait": 18.0},
+    {"log": "raid: raid race + bonk barrage"},
     {"raid": {"from": "coolstreamer", "viewers": 42}, "wait": 30.0}
   ]
 }

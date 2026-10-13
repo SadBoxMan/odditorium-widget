@@ -118,6 +118,7 @@ func test_shipped_config_file_is_clean() -> void:
 		var m := reg.instantiate(path)
 		var defaults := m.get_default_config()
 		defaults["enabled"] = true
+		defaults["z_index"] = defaults.get("z_index", 0)
 		cfg.apply_module_defaults(m.module_id, defaults, m.get_config_open_paths(), m.get_config_constraints())
 		m.free()
 	check_eq(cfg.errors, [] as Array[String], "shipped module sections have no errors")

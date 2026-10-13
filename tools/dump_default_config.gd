@@ -14,6 +14,8 @@ func _initialize() -> void:
 			continue
 		var defaults := {"enabled": true}
 		defaults.merge(m.get_default_config(), true)
+		if not defaults.has("z_index"):
+			defaults["z_index"] = 0
 		modules[m.module_id] = defaults
 		m.free()
 	out["modules"] = modules

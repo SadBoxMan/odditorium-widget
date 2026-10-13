@@ -57,8 +57,11 @@ def main():
             problems.append(f"{path} = {value!r}, expected >= {rule['min']}")
         if "max" in rule and (not isinstance(value, (int, float)) or value > rule["max"]):
             problems.append(f"{path} = {value!r}, expected <= {rule['max']}")
-        if "contains" in rule and (not isinstance(value, (list, dict)) or rule["contains"] not in value):
-            problems.append(f"{path} = {value!r}, expected to contain {rule['contains']!r}")
+        if "contains" in rule:
+            wanted = rule["contains"] if isinstance(rule["contains"], list) else [rule["contains"]]
+            for w in wanted:
+                if not isinstance(value, (list, dict)) or w not in value:
+                    problems.append(f"{path} = {value!r}, expected to contain {w!r}")
 
     print("STATS " + json.dumps(stats, indent=2, sort_keys=True))
     if problems:
