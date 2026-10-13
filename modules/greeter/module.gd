@@ -10,7 +10,7 @@ const POP_SCRIPT := preload("res://modules/greeter/pop.gd")
 
 func get_default_config() -> Dictionary:
 	return {
-		"region": [60, 700, 1800, 300],
+		"region": [60, 160, 1800, 300],
 		"duration_s": 3.0,
 		"cooldown_s": 30.0,
 		"show_follows": true,

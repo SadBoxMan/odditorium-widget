@@ -55,6 +55,59 @@
   },
 
   "modules": {
+    "critter_race": {
+      "enabled": true,
+      "region": [100, 740, 1720, 320],
+      "lanes": 6,
+      "min_humans_to_start": 3,
+      "lobby_timeout_s": 30.0,
+      "countdown_s": 3.0,
+      "results_s": 6.0,
+      "cooldown_s": 10.0,
+      "max_race_s": 45.0,
+      "base_speed": 0.08,
+      "speed_jitter": 0.35,
+      "join_cooldown_s": 5.0,
+      "raid_race": true,
+      "panel_color": "#00000066",
+      "text_color": "#ffffff",
+      "npc_names": ["Pebble", "Noodle", "Biscuit", "Gizmo", "Waffle", "Pickle", "Mochi", "Sprout", "Bean", "Nugget"],
+      "critters": [
+        {"shape": "circle", "color": "#ff6b6b", "size": 34, "sprite": ""},
+        {"shape": "square", "color": "#ffd93d", "size": 30, "sprite": ""},
+        {"shape": "triangle", "color": "#6bcb77", "size": 38, "sprite": ""},
+        {"shape": "circle", "color": "#4d96ff", "size": 28, "sprite": ""},
+        {"shape": "square", "color": "#c77dff", "size": 36, "sprite": ""},
+        {"shape": "triangle", "color": "#ff9f1c", "size": 32, "sprite": ""},
+        {"shape": "circle", "color": "#2ec4b6", "size": 40, "sprite": ""},
+        {"shape": "square", "color": "#f15bb5", "size": 26, "sprite": ""},
+        {"shape": "triangle", "color": "#e0e0e0", "size": 34, "sprite": ""}
+      ],
+      "npc_critters": [
+        {"shape": "circle", "color": "#8d99ae", "size": 26, "sprite": ""},
+        {"shape": "square", "color": "#adb5bd", "size": 24, "sprite": ""},
+        {"shape": "triangle", "color": "#6c757d", "size": 28, "sprite": ""}
+      ],
+      "raider_critter": {"shape": "triangle", "color": "#ff5d8f", "size": 56, "sprite": ""},
+      "seed": 0
+    },
+    "greeter": {
+      "enabled": true,
+      "region": [60, 160, 1800, 300],
+      "duration_s": 3.0,
+      "cooldown_s": 30.0,
+      "show_follows": true,
+      "show_raids": true,
+      "max_on_screen": 12,
+      "shapes": [
+        {"shape": "circle", "color": "#ffd166", "size": 36, "sprite": ""},
+        {"shape": "square", "color": "#06d6a0", "size": 32, "sprite": ""},
+        {"shape": "triangle", "color": "#118ab2", "size": 40, "sprite": ""}
+      ],
+      "follow_shape": {"shape": "circle", "color": "#ef476f", "size": 44, "sprite": ""},
+      "raid_shape": {"shape": "triangle", "color": "#f78c6b", "size": 90, "sprite": ""},
+      "seed": 0
+    }
   },
 
   "debug": {

@@ -8,6 +8,8 @@ extends Node2D
 ##   --run-seconds=<s>        quit after s seconds and print a STATS line
 ##   --screenshot=<s>:<path>  save a PNG of the overlay at s seconds
 ##                            (repeatable; needs a real or virtual display)
+##   --screenshot-bg=<color>  composite screenshots onto this colour instead
+##                            of keeping transparency (e.g. #303846)
 
 var cfg: ChaosConfig
 var bus: ChaosEventBus
@@ -25,6 +27,7 @@ var _elapsed := 0.0
 var _last_prune := 0.0
 var _run_seconds := -1.0
 var _screenshots: Array = []
+var _screenshot_bg: Variant = null
 var _dispatched := 0
 
 
@@ -91,6 +94,8 @@ func _apply_cli_overrides(args: PackedStringArray) -> void:
 			var spec := arg.substr(13)
 			var at := float(spec.get_slice(":", 0))
 			_screenshots.append({"at": at, "path": spec.substr(spec.find(":") + 1), "done": false})
+		elif arg.begins_with("--screenshot-bg="):
+			_screenshot_bg = ShapeFactory.parse_color(arg.substr(16), Color(0.19, 0.22, 0.27))
 
 
 var _reported_errors := 0
@@ -140,6 +145,12 @@ func _take_screenshot(path: String) -> void:
 	if img == null or img.is_empty():
 		push_warning("[screenshot] no image (headless?) for " + path)
 		return
+	if _screenshot_bg != null:
+		var bg := Image.create(img.get_width(), img.get_height(), false, Image.FORMAT_RGBA8)
+		bg.fill(_screenshot_bg)
+		img.convert(Image.FORMAT_RGBA8)
+		bg.blend_rect(img, Rect2i(Vector2i.ZERO, img.get_size()), Vector2i.ZERO)
+		img = bg
 	var err := img.save_png(path)
 	print("[screenshot] %s -> %s" % [path, error_string(err)])
 

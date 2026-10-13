@@ -1,18 +1,48 @@
 {
   "_help": "Rules for the STATS line of the edge_cases integration run.",
-  "client_state": {"eq": "READY"},
-  "client.connects": {"min": 5},
-  "client.invalid_messages": {"min": 7},
-  "client.ignored_events": {"min": 3},
-  "router.ignored_user": {"min": 1},
-  "router.not_command": {"min": 1},
-  "router.unknown_command": {"min": 1},
-  "router.cooldown": {"min": 39},
-  "router.redeems_disabled": {"eq": 0},
-  "dispatched": {"min": 30},
-  "bus.delivered": {"min": 30},
-  "bus.failed": {"eq": 0},
-  "modules": {"contains": "greeter"},
-  "rejected_modules": {"eq": {}},
-  "config_errors": {"eq": 0}
+  "client_state": {
+    "eq": "READY"
+  },
+  "client.connects": {
+    "min": 5
+  },
+  "client.invalid_messages": {
+    "min": 7
+  },
+  "client.ignored_events": {
+    "min": 3
+  },
+  "router.ignored_user": {
+    "min": 1
+  },
+  "router.not_command": {
+    "min": 1
+  },
+  "router.unknown_command": {
+    "min": 1
+  },
+  "router.cooldown": {
+    "min": 39
+  },
+  "router.redeems_disabled": {
+    "eq": 0
+  },
+  "dispatched": {
+    "min": 30
+  },
+  "bus.delivered": {
+    "min": 30
+  },
+  "bus.failed": {
+    "eq": 0
+  },
+  "modules": {
+    "contains": "critter_race"
+  },
+  "rejected_modules": {
+    "eq": {}
+  },
+  "config_errors": {
+    "eq": 0
+  }
 }
